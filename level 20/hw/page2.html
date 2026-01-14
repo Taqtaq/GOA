@@ -1,0 +1,44 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>Form-ების მაგალითი - გვერდი 2</title>
+</head>
+<body>
+
+<h1>გაგზავნილი ინფორმაცია</h1>
+
+<p>ეს გვერდი წარმოადგენს მრავალგვერდიანი ფორმის მეორე ნაწილს. აქ შეიძლება დაამატოთ დამატებითი input-ები ან ინფორმაციის გამოტანა, რაც მომხმარებელმა შეავსო.</p>
+
+<!-- ახალი ფორმა -->
+<form action="#" method="post">
+    <!-- Textarea -->
+    <label for="about">ჩემს შესახებ:</label><br>
+    <textarea id="about" name="about" rows="5" placeholder="ჩაწერეთ მოკლე ინფორმაცია საკუთარ თავზე"></textarea>
+    <br><br>
+
+    <!-- Radio buttons -->
+    <p>სქესი:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">მამრობითი</label><br>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">მდედრობითი</label><br><br>
+
+    <!-- Multiple checkbox -->
+    <p>ჩართეთ თქვენი ინტერესები:</p>
+    <input type="checkbox" id="sports" name="interests" value="sports">
+    <label for="sports">სპორტი</label><br>
+
+    <input type="checkbox" id="music" name="interests" value="music">
+    <label for="music">მუსიკა</label><br>
+
+    <input type="checkbox" id="tech" name="interests" value="tech">
+    <label for="tech">ტექნოლოგიები</label><br><br>
+
+    <input type="submit" value="დასრულება">
+</form>
+
+</body>
+</html>

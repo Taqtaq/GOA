@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>პოსტის ატვირთვის ფორმა</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+
+<h1>პოსტის ატვირთვის ფორმა</h1>
+
+<form action="#" method="post" enctype="multipart/form-data">
+    
+    <!-- 
+        name="title" - ველის სახელი, რომელიც გადაიგზავნება სერვერზე
+        id="title" - უნიკალური იდენტიფიკატორი label-სთვის
+        required - ველი სავალდებულოა შევსებისთვის
+        placeholder - მითითება მომხმარებლისთვის ველში
+    -->
+    <label for="title">სათაური:</label><br>
+    <input type="text" id="title" name="title" placeholder="შეიყვანეთ პოსტის სათაური" required>
+    <br><br>
+
+    <!-- 
+        name="content" - ველის სახელი ტექსტისთვის
+        id="content" - უნიკალური იდენტიფიკატორი label-სთვის
+        required - ველი სავალდებულოა
+        rows, cols - ტექსტის ველის ზომა
+        placeholder - მითითება მომხმარებლისთვის
+    -->
+    <label for="content">ტექსტი:</label><br>
+    <textarea id="content" name="content" rows="5" cols="50" placeholder="ჩაწერეთ პოსტის ტექსტი" required></textarea>
+    <br><br>
+
+    <!-- 
+        name="image" - ველის სახელი ფაილისთვის
+        id="image" - უნიკალური იდენტიფიკატორი label-სთვის
+        accept="image/*" - მხოლოდ სურათების ატვირთვაა დაშვებული
+        required - ველი სავალდებულოა
+    -->
+    <label for="image">სურათი:</label><br>
+    <input type="file" id="image" name="image" accept="image/*" required>
+    <br><br>
+
+    <!-- submit - ღილაკი ფორმის გაგზავნისთვის -->
+    <input type="submit" value="ატვირთვა">
+
+</form>
+
+<!-- 
+ფართო კომენტარი:
+- action="#" : საიდან უნდა გაიგზავნოს ფორმის მონაცემები (სერვერზე)
+- method="post" : გაგზავნის მეთოდი
+- enctype="multipart/form-data" : საჭირო ფაილის ატვირთვისთვის
+- label for="id" : ეტიკეტი ველისთვის, კლიენტზე დაჭერისას კურსორი ველზე გადადის
+- placeholder : ტექსტი ველში, რომელიც desaparece როცა მომხმარებელი იწყებს შევსებას
+- required : ველი სავალდებულოა
+- accept="image/*" : მხოლოდ სურათების ატვირთვაა დაშვებული
+-->
+
+</body>
+</html>
