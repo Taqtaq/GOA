@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>About HTML</title>
+  <link rel="stylesheet" href="html.css">
+</head>
+<body>
+
+  <!--
+  1) Box-model:
+  Box-model ნიშნავს რომ ყველა ელემენტი შედგება 4 ნაწილისგან:
+  content (შიგთავსი) + padding (შიდა დაშორება) + border (საზღვარი) + margin (გარე დაშორება).
+  -->
+
+  <header class="header">
+    <h1>HTML & CSS</h1>
+    <nav>
+      <a class="navlink active" href="index.html">About HTML</a>
+      <a class="navlink" href="css.html">About CSS</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>What is HTML?</h2>
+      <p>
+        HTML არის ენა, რომლითაც ვქმნით ვებ გვერდის სტრუქტურას.
+        HTML-ში ვიყენებთ ტეგებს როგორიცაა: h1, p, a, img, ul და სხვ.
+      </p>
+
+      <ul>
+        <li>HTML = Structure</li>
+        <li>Tag-ები აღწერს ელემენტებს</li>
+        <li>Browser კითხულობს HTML-ს და აჩვენებს გვერდს</li>
+      </ul>
+    </section>
+
+    <!-- 2) ერთი ელემენტი, გაცენტრება + border + background (external css) -->
+    <section class="box-demo">
+      <h3>Centered Element (external css)</h3>
+      <div class="center-box">
+        I am centered box
+      </div>
+
+      <p class="small">
+        Border style-ს შეცვლა შეგიძლია css-ში: solid / dashed / dotted
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">© 2026</footer>
+</body>
+</html>

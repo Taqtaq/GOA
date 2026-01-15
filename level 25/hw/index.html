@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>Homework</title>
+
+<style>
+  /* CSS არის სტილების ენა, რომელიც განსაზღვრავს როგორ გამოიყურება HTML ელემენტები */
+
+  /* class გამოიყენება ბევრ ელემენტზე, id უნდა იყოს უნიკალური */
+  /* class -> .name , id -> #name */
+
+  .txt{
+    color:#2f3cff;
+    background:#eef0ff;
+    padding:6px;
+    margin:5px 0;
+  }
+
+  #box{
+    border:1px solid #ccc;
+    padding:10px;
+    margin-top:15px;
+  }
+
+  h1{
+    color:yellow;
+  }
+
+  p{
+    color:green;
+    font-size:19px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 2) 8 paragraphs with same class -->
+<p class="txt">Paragraph 1</p>
+<p class="txt">Paragraph 2</p>
+<p class="txt">Paragraph 3</p>
+<p class="txt">Paragraph 4</p>
+<p class="txt">Paragraph 5</p>
+<p class="txt">Paragraph 6</p>
+<p class="txt">Paragraph 7</p>
+<p class="txt">Paragraph 8</p>
+
+<!-- 4) simple web page using different html tags and inline css -->
+<div id="box">
+  <h1>Hello World!</h1>
+
+  <p style="margin:10px 0;">
+    This is <b>bold</b> and <i>italic</i> text.
+  </p>
+
+  <a href="https://example.com" target="_blank"
+     style="text-decoration:none; color:#2f3cff;">
+    Example link
+  </a>
+
+  <ul style="margin-top:10px;">
+    <li>Item one</li>
+    <li>Item two</li>
+  </ul>
+</div>
+
+<!--
+7) გასწორებული კოდი:
+p { color: green; font-size: 19px; }
+h1 { color: yellow; }
+-->
+
+<!--
+8) მოცემულ კოდში:
+<p><b><i></i></b></p>
+b tag-ის მშობელი არის p
+i tag-ის მშობელი არის b
+-->
+
+</body>
+</html>

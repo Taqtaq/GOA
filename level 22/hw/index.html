@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ჩემი საიტი - მუსიკა და ფილმები</title>
+
+  <style>
+    body{ font-family: Arial, sans-serif; background:#f2f2f2; padding:20px; margin:0; }
+    header, main, footer{ max-width:900px; margin:0 auto; }
+    .box{ background:#fff; padding:15px; border-radius:8px; margin:15px 0; }
+    nav a{ margin-right:10px; color:#2f3cff; text-decoration:none; }
+    nav a:hover{ text-decoration:underline; }
+    img{ max-width:100%; border-radius:8px; }
+    table{ width:100%; border-collapse:collapse; }
+    th, td{ border:1px solid #ddd; padding:8px; text-align:left; }
+    video, audio{ width:100%; }
+  </style>
+</head>
+
+<body>
+
+  <!-- header / nav -->
+  <header class="box">
+    <h1>ჩემი პატარა ვებ-გვერდი</h1>
+    <p>თემა: მუსიკა, ფილმები და ჩემი ინტერესები</p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#movie">Movie</a>
+      <a href="#music">Music</a>
+      <a href="#table">Table</a>
+      <a href="#form">Form</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- section -->
+    <section id="about" class="box">
+      <h2>ჩემ შესახებ</h2>
+
+      <p>
+        მე ვარ <strong>მოსწავლე</strong> და ვსწავლობ <em>HTML/CSS</em>.
+        ეს ტექსტი უბრალოდ მაგალითია.
+      </p>
+
+      <p>
+        აქ არის <mark>გამოყოფილი</mark> სიტყვა და ასევე <small>მცირე ტექსტი</small>.
+      </p>
+
+      <p>
+        ჩემი საყვარელი საიტი:
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+      </p>
+
+      <hr>
+
+      <h3>ჩემი ჰობები (ul/li)</h3>
+      <ul>
+        <li>მუსიკა</li>
+        <li>ფილმები</li>
+        <li>სპორტი</li>
+      </ul>
+
+      <h3>დღის გეგმა (ol/li)</h3>
+      <ol>
+        <li>გაკვეთილი</li>
+        <li>საშინაო დავალება</li>
+        <li>დასვენება</li>
+      </ol>
+
+      <blockquote>
+        “ვინც სწავლობს, ის ძლიერდება.”
+      </blockquote>
+    </section>
+
+    <!-- article + image -->
+    <article id="movie" class="box">
+      <h2>საყვარელი ფილმი</h2>
+      <p>
+        ჩემი საყვარელი ფილმია <b>Interstellar</b>.
+        მომწონს სიუჟეტი და მუსიკა.
+      </p>
+
+      <!-- img -->
+      <img src="photo.jpg" alt="ფოტო (თუ არ გაქვს, უბრალოდ წაშალე ეს img)">
+      <p><small>თუ photo.jpg არ გაქვს, შეგიძლია ეს სურათი წაშალო.</small></p>
+
+      <!-- video -->
+      <h3>ვიდეო (video)</h3>
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        ბრაუზერი არ უჭერს მხარს ვიდეოს.
+      </video>
+
+      <!-- comment: video formats -->
+      <!-- ვიდეო ფორმატები: mp4, webm, ogg, avi, mov, mkv -->
+    </article>
+
+    <!-- audio -->
+    <section id="music" class="box">
+      <h2>მუსიკა</h2>
+      <p>
+        მე მომწონს სხვადასხვა მუსიკა, განსაკუთრებით საუნდტრეკები.
+      </p>
+
+      <h3>აუდიო (audio)</h3>
+      <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.ogg" type="audio/ogg">
+        ბრაუზერი არ უჭერს მხარს აუდიოს.
+      </audio>
+
+      <!--
+        აუდიო ფორმატები: mp3, ogg, wav, aac, m4a
+        audio თეგშიც შეიძლება მართვის ფუნქციები: controls, autoplay, loop, muted
+      -->
+    </section>
+
+    <!-- table -->
+    <section id="table" class="box">
+      <h2>ცხრილი (table)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>სახელი</th>
+            <th>საინტერესო რამ</th>
+            <th>შეფასება</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Interstellar</td>
+            <td>კოსმოსი</td>
+            <td>10/10</td>
+          </tr>
+          <tr>
+            <td>Music</td>
+            <td>საუნდტრეკი</td>
+            <td>9/10</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- form -->
+    <section id="form" class="box">
+      <h2>ფორმა (form)</h2>
+
+      <form>
+        <label for="name">სახელი:</label><br>
+        <input id="name" type="text" placeholder="შეიყვანე სახელი"><br><br>
+
+        <label for="age">ასაკი:</label><br>
+        <input id="age" type="number" min="1" max="100"><br><br>
+
+        <p>აირჩიე რას გირჩევნია:</p>
+        <input type="radio" id="r1" name="choice">
+        <label for="r1">ფილმი</label><br>
+
+        <input type="radio" id="r2" name="choice">
+        <label for="r2">მუსიკა</label><br><br>
+
+        <input type="checkbox" id="c1">
+        <label for="c1">ვეთანხმები წესებს</label><br><br>
+
+        <label for="msg">შეტყობინება:</label><br>
+        <textarea id="msg" rows="4" cols="30" placeholder="დაწერე რამე..."></textarea><br><br>
+
+        <button type="submit">გაგზავნა</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="box">
+    <p>© 2026 ჩემი საიტი</p>
+    <p><a href="#about">ზემოთ დაბრუნება</a></p>
+  </footer>
+
+</body>
+</html>

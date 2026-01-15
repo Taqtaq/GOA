@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tables</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      padding:20px;
+    }
+
+    table{
+      margin-bottom:30px;
+      width:600px;
+      border-collapse: collapse;
+    }
+
+    th, td{
+      border:1px solid black;
+      padding:8px;
+      text-align:left;
+    }
+
+    /* მეორე ცხრილისთვის (uncollapsed borders) */
+    .separate{
+      border-collapse: separate;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    რატომ არის table კარგი პრაქტიკა?
+    --------------------------------
+    table გამოიყენება ტაბულარული მონაცემებისთვის (ცხრილები),
+    როცა ინფორმაცია არის სტრუქტურირებული: სვეტები და რიგები.
+    ეს აუმჯობესებს კოდის წაკითხვას და მონაცემების სწორად წარმოდგენას.
+  -->
+
+  <!--
+    <table> - ქმნის ცხრილს
+    <tr>    - table row, ქმნის ერთ რიგს
+    <th>    - table header, სათაურის უჯრა (მუქი ტექსტი)
+    <td>    - table data, ჩვეულებრივი მონაცემის უჯრა
+  -->
+
+  <!-- TABLE 1 -->
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Priya</td>
+      <td>Sharma</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Arun</td>
+      <td>Singh</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>Sam</td>
+      <td>Watson</td>
+      <td>41</td>
+    </tr>
+  </table>
+
+  <!-- TABLE 2 (Uncollapsed borders) -->
+  <table class="separate">
+    <tr>
+      <th>Name</th>
+      <th>Job Title</th>
+      <th>Email address</th>
+    </tr>
+    <tr>
+      <td>Anna Fitzgerald</td>
+      <td>Staff Writer</td>
+      <td>example@company.com</td>
+    </tr>
+    <tr>
+      <td>John Smith</td>
+      <td>Marketing Manager</td>
+      <td>example2@company.com</td>
+    </tr>
+    <tr>
+      <td>Zendaya Grace</td>
+      <td>CEO</td>
+      <td>example2@company.com</td>
+    </tr>
+  </table>
+
+  <!-- TABLE 3 -->
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>Full Name</th>
+      <th>Position</th>
+      <th>Salary</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Bill Gates</td>
+      <td>Founder Microsoft</td>
+      <td>$1000</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Steve Jobs</td>
+      <td>Founder Apple</td>
+      <td>$1200</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Larry Page</td>
+      <td>Founder Google</td>
+      <td>$1100</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Mark Zuckerberg</td>
+      <td>Founder Facebook</td>
+      <td>$1300</td>
+    </tr>
+  </table>
+
+  <!-- TABLE 4 -->
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Harry Depp</td>
+      <td>28</td>
+      <td>Britain</td>
+    </tr>
+    <tr>
+      <td>John Smith</td>
+      <td>35</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Ram Krishna</td>
+      <td>19</td>
+      <td>Nepal</td>
+    </tr>
+  </table>
+
+</body>
+</html>

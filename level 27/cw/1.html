@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Delete board</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .modal {
+    width: 600px;
+    background: #fff;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    margin: 0 0 20px;
+    color: #ee5a5a;
+    font-size: 36px;
+  }
+
+  p {
+    color: #8b93a6;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+
+  .btn-delete {
+    background: #ee5a5a;
+    color: #fff;
+  }
+
+  .btn-cancel {
+    background: #eef0ff;
+    color: #6a66ff;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="modal">
+  <h1>Delete this board?</h1>
+
+  <p>
+    Are you sure you want to delete the “Platform Launch” board?
+    This action will remove all columns and tasks and cannot be reversed.
+  </p>
+
+  <button class="btn btn-delete">Delete</button>
+  <button class="btn btn-cancel">Cancel</button>
+</div>
+
+</body>
+</html>

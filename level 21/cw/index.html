@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender radio input</title>
+</head>
+<body>
+    <h2>Choise gender</h2>
+    <form>
+     <!--
+        type="radio" - საშუალებას აძლევს მომხმარებელს აირჩიოს მხოლოდ ერთი ვარიანტი
+        name="gender" - ყველა radio უნდა ჰქონდეს ერთი და იგივე name
+        id - უნიკალური იდენტიფიკატორი label-სთვის
+        value - მნიშვნელობა, რომელიც გადაიგზავნება სერვერზე
+        required - სავალდებულოა ერთ-ერთი არჩევა
+    -->
+        <input type="radio" id="'male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br>
+    </form>
+</body>
+</html>

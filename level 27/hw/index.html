@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>Background homework</title>
+
+<style>
+  /* -------------------------------------------------
+     1) ერთი div background-image + hover
+     -------------------------------------------------
+     background-image — აყენებს სურათს ელემენტის ფონად
+  */
+
+  .box{
+    width:400px;
+    height:300px;
+    background-image:url("https://picsum.photos/800/600");
+    background-size:cover;
+    background-position:center;
+
+    color:black;
+    padding:20px;
+    transition:0.5s;
+  }
+
+  /* hover-ის დროს:
+     - სიგანე იცვლება
+     - ფოტო მუქდება
+     - ტექსტის ფერი ხდება თეთრი
+  */
+  .box:hover{
+    width:800px;
+    color:white;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("https://picsum.photos/800/600");
+  }
+
+  /* -------------------------------------------------
+     2) background-image მაგალითები
+     -------------------------------------------------
+     background-image — ფონად სურათის დაყენება
+  */
+
+  .img1{
+    width:200px;
+    height:120px;
+    background-image:url("https://picsum.photos/200/120");
+    margin:10px 0;
+  }
+
+  .img2{
+    width:200px;
+    height:120px;
+    background-image:linear-gradient(red, yellow);
+    margin:10px 0;
+  }
+
+  /* -------------------------------------------------
+     background-position მაგალითები
+     -------------------------------------------------
+     background-position — განსაზღვრავს სურათის მდებარეობას
+  */
+
+  .pos1{
+    width:200px;
+    height:120px;
+    background-image:url("https://picsum.photos/300/200");
+    background-position:left top;
+    background-size:cover;
+    margin:10px 0;
+  }
+
+  .pos2{
+    width:200px;
+    height:120px;
+    background-image:url("https://picsum.photos/300/200");
+    background-position:right bottom;
+    background-size:cover;
+    margin:10px 0;
+  }
+
+  /* -------------------------------------------------
+     background-size მაგალითები
+     -------------------------------------------------
+     background-size — აკონტროლებს სურათის ზომას
+  */
+
+  .size1{
+    width:200px;
+    height:120px;
+    background-image:url("https://picsum.photos/300/200");
+    background-size:cover;
+    margin:10px 0;
+  }
+
+  .size2{
+    width:200px;
+    height:120px;
+    background-image:url("https://picsum.photos/300/200");
+    background-size:contain;
+    background-repeat:no-repeat;
+    margin:10px 0;
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- 1) მთავარი div -->
+  <div class="box">
+    ეს არის ტექსტი div-ის შიგნით.<br>
+    hover-ის დროს იცვლება ზომა, ფონი და ტექსტის ფერი.
+  </div>
+
+  <!-- 2) background-image -->
+  <div class="img1"></div>
+  <div class="img2"></div>
+
+  <!-- background-position -->
+  <div class="pos1"></div>
+  <div class="pos2"></div>
+
+  <!-- background-size -->
+  <div class="size1"></div>
+  <div class="size2"></div>
+
+</body>
+</html>

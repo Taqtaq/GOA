@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#d8defa;
+      padding:30px;
+    }
+
+    /* 1) TABLE */
+    .box{
+      background:#fff;
+      padding:20px;
+      border-radius:10px;
+      width: 800px;
+      max-width: 100%;
+      margin-bottom: 25px;
+    }
+
+    table{
+      width:100%;
+
+      /* border-collapse:
+         collapse -> თეგებს (td/th) შორის border-ები "ერთდება" და ერთ ხაზად ჩანს
+         separate -> border-ები ცალ-ცალკე რჩება (default)
+      */
+      border-collapse: collapse;
+    }
+
+    th{
+      background:#6f79db;
+      color:white;
+      text-align:left;
+      padding:12px;
+      font-size:14px;
+    }
+
+    td{
+      padding:12px;
+      border-top:1px solid #eee;
+      font-size:13px;
+      color:#444;
+    }
+
+    /* nth-child:
+       ირჩევს ელემენტს რიგითობის (index) მიხედვით მშობელში.
+       აქ ვაკეთებთ ზოლებად ფონს: ლუწი რიგები
+    */
+    tbody tr:nth-child(even){
+      background:#f6f7ff;
+    }
+
+    /* 3) LINKS */
+    .links a{
+      display:inline-block;
+      margin:6px 10px 0 0;
+      padding:8px 12px;
+      text-decoration:none;
+      border:1px solid #6f79db;
+      border-radius:20px;
+      color:#2f3cff;
+      background:#eef0ff;
+    }
+
+    /* pseudo-selector (pseudo-class) მაგალითები ლინკზე */
+    .links a:hover{
+      background:#2f3cff;
+      color:white;
+    }
+
+    .links a:active{
+      opacity:0.8;
+    }
+
+    .links a:visited{
+      color:#6a2fff;
+    }
+
+    .links a:focus{
+      outline:2px solid #2f3cff;
+      outline-offset:2px;
+    }
+
+    /* 2) PSEUDO SELECTORS - პატარა დემო */
+    .demo li:first-child{ font-weight:bold; }
+    .demo li:last-child{ color:#2f3cff; }
+    .demo li:nth-child(odd){ background:#f2f4ff; }
+
+    .demo input:checked + span{ color:#2f3cff; font-weight:bold; }
+
+    /* pseudo-element მაგალითები */
+    .note::before{ content:"* "; color:#ea5555; }
+    .text::first-letter{ font-size:22px; font-weight:bold; }
+  </style>
+</head>
+
+<body>
+
+  <!-- 1) TABLE -->
+  <div class="box">
+    <h3>1) Table</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>Job Title</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr><td>Vincent Williamson</td><td>31</td><td>iOS Developer</td><td>Washington</td></tr>
+        <tr><td>Joseph Smith</td><td>27</td><td>Project Manager</td><td>Somerville, MA</td></tr>
+        <tr><td>Justin Black</td><td>26</td><td>Front-End Developer</td><td>Los Angeles</td></tr>
+        <tr><td>Sean Guzman</td><td>25</td><td>Web Designer</td><td>San Francisco</td></tr>
+        <tr><td>Keith Carter</td><td>20</td><td>Graphic Designer</td><td>New York, NY</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2) COMMENT EXPLANATIONS + EXAMPLES -->
+  <div class="box">
+    <h3>2) Pseudo-selectors (კომენტარებით ახსნა + მაგალითები)</h3>
+
+    <!--
+      pseudo-selector რა არის?
+      CSS-ში ეს არის "დამატებითი" სელექტორი, რომელიც არჩევს ელემენტს მდგომარეობით
+      ან მის ნაწილს. ორი ტიპია:
+      1) pseudo-class -> :hover, :active, :first-child ...
+      2) pseudo-element -> ::before, ::after, ::first-letter ...
+    -->
+
+    <p class="note">ქვემოთ არის რამდენიმე მაგალითი:</p>
+
+    <ul class="demo">
+      <li>first-child მაგალითი</li>
+      <li>nth-child(odd) მაგალითი</li>
+      <li>nth-child(odd) მაგალითი</li>
+      <li>last-child მაგალითი</li>
+    </ul>
+
+    <div style="margin-top:10px;">
+      <label>
+        <input type="checkbox">
+        <span> :checked მაგალითი</span>
+      </label>
+    </div>
+
+    <p class="text">
+      ეს ტექსტი აჩვენებს ::first-letter მაგალითს (პირველი ასო დიდი ხდება).
+    </p>
+
+    <!--
+      რაც მე ვიცი pseudo-selectors (ჩამონათვალი მოკლედ):
+      :hover, :active, :visited, :focus,
+      :first-child, :last-child, :nth-child(),
+      :checked, :disabled, :not()
+      pseudo-elements: ::before, ::after, ::first-letter
+      (ყველაზე ხშირად გამოყენებულები)
+    -->
+  </div>
+
+  <!-- 3) LINKS -->
+  <div class="box links">
+    <h3>3) Links (გასტილული)</h3>
+    <a href="https://example.com" target="_blank">Example</a>
+    <a href="https://google.com" target="_blank">Google</a>
+    <a href="https://wikipedia.org" target="_blank">Wikipedia</a>
+    <a href="#top">Local link</a>
+  </div>
+
+</body>
+</html>

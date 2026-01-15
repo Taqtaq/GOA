@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ჰობების არჩევა</h2>
+     <!--
+        checkbox - საშუალებას აძლევს მომხმარებელს აირჩიოს ერთზე მეტი ჰობი
+        name="hobby[]" - [] ნიშნავს, რომ შეიძლება რამდენიმე მნიშვნელობის გაგზავნა
+        value - მნიშვნელობა, რომელიც გადაიგზავნება სერვერზე
+        id - გამოიყენება label-სთვის
+    -->
+    <form>
+        <input type="checkbox" id="sport" name="hobby[]" value="sport">
+        <label for="sport">სპორტი</label><br>
+        <input type="checkbox" id="music" name="hobby[]" value="music">
+        <label for="music">მუსიკა</label><br>
+        <input type="checkbox" id="reading" name="hobby[]" value="reading">
+        <label for="reading">წიგნების კითხვა</label><br>
+        <input type="checkbox" id="travel" name="hobby[]" value="travel">
+        <label for="travel">მოგზაურობა</label><br>
+        <br><br>
+        <h2>ქვეყნის არჩევა</h2>
+         <!--
+        select - ჩამოსაშლელი სია
+        option selected - აღნიშნავს არჩეულ ელემენტს თავიდანვე
+    -->
+        <label for="country">Country:</label><br>
+        <select id="country" name="country">
+            <option value="georgia" selected>Georgia</option>
+            <option value="usa" selected>USA</option>
+            <option value="germany">Germany</option>
+            <option value="france">France</option>
+        </select>
+    </form>
+</body>
+</html>

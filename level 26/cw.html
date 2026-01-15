@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model მაგალითი</title>
+
+    <style>
+        /* სტანდარტული box model-ის მაგალითი */
+        .box {
+            width: 200px;          /* ელემენტის შიდა სიგანე (content width) */
+            height: 100px;         /* ელემენტის შიდა სიმაღლე (content height) */
+            padding: 20px;         /* შიდა სივრცე content-სა და საზღვარს შორის */
+            border: 5px solid black; /* ჩარჩო ელემენტის გარშემო */
+            margin: 30px;          /* გარე სივრცე ელემენტის გარშემო სხვა ელემენტებთან */
+            background-color: lightblue; /* ვიზუალური აღქმისთვის */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Box Model მაგალითი</h2>
+
+    <!--
+        სტანდარტული box model აღწერა:
+        
+        margin: ელემენტსა და გარესამყაროს შორის სივრცე
+        border: ელემენტის გარშემო ჩარჩო
+        padding: სივრცე content-ისა და border-ის შორის
+        width: content-ის სიგანე
+        height: content-ის სიმაღლე
+
+        გამოსახულება:
+
+         -----------------------------------
+         |           margin                |
+          |  ---------------------------  |
+          |  |        border           | |
+          |  |  --------------------  |  |
+          |  |  |    padding       |  |  |
+          |  |  |  --------------- |  |  |
+          |  |  |  |  content    | |  |  |
+          |  |  |  --------------- |  |  |
+          |  |  ---------------------  |  |
+         |  ---------------------------    |
+         -----------------------------------
+
+        საბოლოო სიგანე = width + 2*padding + 2*border
+        საბოლოო სიმაღლე = height + 2*padding + 2*border
+    -->
+
+    <div class="box">
+        ეს არის მაგალითი Box Model-ისთვის
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS მაგალითი</title>
+
+    <!-- 
+    Internal CSS - როცა სტილები წერია <style> ტეგში, 
+    პირდაპირ HTML ფაილში, head-ის შიგნით.
+    -->
+    <style>
+        /* 4) Internal CSS გამოყენება tag selector-ებისთვის */
+        h2 {
+            color: green;       /* ტექსტის ფერი */
+            font-size: 30px;    /* ტექსტის ზომა */
+            font-weight: bold;  /* ტექსტის სისქე */
+        }
+
+        p {
+            color: blue;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 5) დამატებით სხვა ელემენტის სტილი */
+        div {
+            background-color: lightyellow;
+            padding: 10px;
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+    2) განსხვავება CSS ტიპებს შორის:
+    - inline: style ატრიბუტით პირდაპირ ელემენტში. კონკრეტულ ელემენტზე მოქმედებს.
+    - internal: <style> ტეგში, HTML ფაილში. მთელი გვერდის ელემენტებს შეუძლია დაუკავშირდეს.
+    - external: ცალკე .css ფაილშია შენახული, HTML-ში <link> - ით ხდება კავშირი. კარგია როცა ბევრ გვერდზე ერთნაირად უნდა გამოიყენოთ.
+    -->
+
+    <h2>ჩემი სათაური</h2>
+    <p>ჩემი პირველი პარაგრაფი (internal CSS)</p>
+
+    <!-- 3) 5 პარაგრაფი inline CSS -->
+    <p style="color: red; background-color: pink;">პარაგრაფი 1 (inline CSS)</p>
+    <p style="color: red; background-color: pink;">პარაგრაფი 2 (inline CSS)</p>
+    <p style="color: red; background-color: pink;">პარაგრაფი 3 (inline CSS)</p>
+    <p style="color: red; background-color: pink;">პარაგრაფი 4 (inline CSS)</p>
+    <p style="color: red; background-color: pink;">პარაგრაფი 5 (inline CSS)</p>
+
+    <!-- 5) დამატებითი ელემენტის სტილი -->
+    <div>
+        ეს არის დამატებითი ელემენტი, რომელიც გამოყენებულია internal CSS-ით.
+    </div>
+
+    <!-- 
+    6) განსხვავება selector-ებს შორის:
+    - tag selector: აირჩევს ყველა კონკრეტული tag-ს (მაგ: p, h1, div)
+    - class selector: .classname, აირჩევს ყველა ელემენტს, რომელსაც მოცემული კლასი აქვს
+    - id selector: #idname, აირჩევს კონკრეტულ ელემენტს მხოლოდ იმავე id-ს მქონეს
+
+    7) CSS ტერმინები:
+    - declaration: ყველაფერი { } შიგნით, რაც ადგენს სტილს (მაგ: color: red;)
+    - property: რაც შეგვიცვალეთ (მაგ: color)
+    - value: property-ს ნამდვილი მნიშვნელობა (მაგ: red)
+    - CSS rule: selector + declaration (მაგ: p { color: red; })
+    -->
+
+</body>
+</html>

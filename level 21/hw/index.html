@@ -1,0 +1,71 @@
+<!--
+ვიდეო ფორმატები:
+mp4, webm, ogg, avi, mov, mkv
+
+video თეგის მართვის ფუნქციები:
+controls - აჩვენებს მართვის ღილაკებს
+autoplay - ავტომატურად იწყებს დაკვრას
+loop - ვიდეო თავიდან იწყებს დაკვრას
+muted - ვიდეო ჩუმად იწყებს
+
+audio თეგშიც შეგვიძლია იგივე მართვის ფუნქციების გამოყენება,
+როგორიცაა controls, autoplay, loop და muted.
+-->
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ჩემი საყვარელი ფილმი</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#f2f2f2;
+      padding:20px;
+    }
+
+    .box{
+      background:#fff;
+      padding:15px;
+      border-radius:8px;
+      margin-bottom:20px;
+    }
+
+    video, audio{
+      width:100%;
+    }
+
+    a{
+      color:#2f3cff;
+      text-decoration:none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>ჩემი საყვარელი ფილმი</h1>
+    <p>
+      ჩემი საყვარელი ფილმია <b>Interstellar</b>.
+      ეს ფილმი მომწონს თავისი მუსიკით და იდეით.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>ვიდეო</h2>
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="box">
+    <h2>აუდიო</h2>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg">
+      <source src="audio.ogg" type="audio/ogg">
+    </audio>
+  </div>
+
+</body>
+</html>
