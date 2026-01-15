@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding:24px;
+    background:hsl(0, 0%, 95%);
+}
+.cards {
+    width: 100%;
+    max-width: 920px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+
+}
+.card {
+    padding: 48px;
+    color: white;
+    flex:1;
+}
+button {
+    background-color:  hsl(0, 0%, 95%);
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    padding: 15px 30px;
+}
+.sedans  {
+    background-color: hsl(31, 77%, 52%);
+}
+.suvs {
+    background-color: hsl(184, 100%, 22%);
+}
+.luxury {
+    background-color: hsl(179, 100%, 13%);
+}
+.sedans button {
+  color: hsl(31, 77%, 52%);
+}
+
+.suvs button {
+  color: hsl(184, 100%, 22%);
+}
+
+.luxury button {
+  color: hsl(179, 100%, 13%);
+}
+@media (min-width: 900px) {
+  .cards { flex-direction: row; }
+}
+p {
+    padding-bottom: 55px;
+}

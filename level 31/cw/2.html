@@ -1,0 +1,78 @@
+/* Flexbox ჩართვა კონტეინერზე */
+.container {
+  display: flex; 
+  /* ელემენტებს აწყობს ერთ ხაზში (flex context) */
+}
+
+/* მიმართულება (ღერძი) */
+.container {
+  flex-direction: row;       
+  /* row — ჰორიზონტალურად (default) */
+  /* row-reverse — ჰორიზონტალურად უკუღმა */
+  /* column — ვერტიკალურად */
+  /* column-reverse — ვერტიკალურად უკუღმა */
+}
+
+/* გადატანა ახალ ხაზზე */
+.container {
+  flex-wrap: nowrap;         
+  /* nowrap — არ გადადის ახალ ხაზზე (default) */
+  /* wrap — გადადის ახალ ხაზზე */
+  /* wrap-reverse — გადადის უკუღმა */
+}
+
+/* მთავარი ღერძზე განლაგება */
+.container {
+  justify-content: center;   
+  /* flex-start — დასაწყისში */
+  /* flex-end — ბოლოში */
+  /* center — ცენტრში */
+  /* space-between — კიდეებში, შუაში სივრცე */
+  /* space-around — გარშემო სივრცე */
+  /* space-evenly — თანაბარი სივრცეები */
+}
+
+/* გადაკვეთის ღერძზე განლაგება */
+.container {
+  align-items: center;       
+  /* stretch — იწელება (default) */
+  /* flex-start — ზემოთ/მარცხნივ */
+  /* flex-end — ქვემოთ/მარჯვნივ */
+  /* center — ცენტრში */
+  /* baseline — ტექსტის ხაზზე */
+}
+
+/* მრავალი ხაზის მართვა (როცა wrap არის ჩართული) */
+.container {
+  align-content: space-between;
+  /* მუშაობს მხოლოდ wrap-ის დროს */
+  /* flex-start, flex-end, center, space-between, space-around, stretch */
+}
+
+/* ელემენტზე (child) — ზომის პროპორციები */
+.item {
+  flex-grow: 1;              
+  /* რამდენად გაიზარდოს თავისუფალ სივრცეში */
+}
+
+.item {
+  flex-shrink: 1;            
+  /* რამდენად შეიკუმშოს სივრცის ნაკლებობისას */
+}
+
+.item {
+  flex-basis: 200px;         
+  /* საწყისი ზომა ელემენტის */
+}
+
+/* შემოკლებული ჩანაწერი */
+.item {
+  flex: 1 1 200px;           
+  /* grow shrink basis */
+}
+
+/* კონკრეტული ელემენტის გადაკვეთის ღერძზე გადატანა */
+.item {
+  align-self: center;        
+  /* flex-start, flex-end, center, stretch */
+}

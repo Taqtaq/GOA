@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 260px;
+  padding: 30px 20px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.instagram {
+  background: #e1306c;
+  color: white;
+  border: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color:darkslategray;
+  color:white;
+}
+.instagram button {
+    color:#e1306c
+}
