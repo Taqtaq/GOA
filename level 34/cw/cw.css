@@ -1,0 +1,19 @@
+main.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 180px;
+
+  gap: 16px;
+
+  place-items: center; /* align-items + justify-items */
+  width: 1200px;
+  height: 800px;
+  border: 2px solid red;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}

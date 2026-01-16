@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards + Navbar (Flexbox)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!--
+  NAVBAR TASK:
+  ქვემოთ არის 3 navbar, რომ ნახო განსხვავება:
+  space-between / space-around / space-evenly
+  -->
+  <header class="header">
+    <nav class="nav nav--between">
+      <div class="logo">LOGO</div>
+      <ul class="links">
+        <li><a href="#cards1">Cards 1</a></li>
+        <li><a href="#cards2">Cards 2</a></li>
+        <li><a href="#cards3">Cards 3</a></li>
+      </ul>
+      <a class="nav-btn" href="#">Login</a>
+    </nav>
+
+    <nav class="nav nav--around">
+      <div class="logo">LOGO</div>
+      <ul class="links">
+        <li><a href="#cards1">Cards 1</a></li>
+        <li><a href="#cards2">Cards 2</a></li>
+        <li><a href="#cards3">Cards 3</a></li>
+      </ul>
+      <a class="nav-btn" href="#">Login</a>
+    </nav>
+
+    <nav class="nav nav--evenly">
+      <div class="logo">LOGO</div>
+      <ul class="links">
+        <li><a href="#cards1">Cards 1</a></li>
+        <li><a href="#cards2">Cards 2</a></li>
+        <li><a href="#cards3">Cards 3</a></li>
+      </ul>
+      <a class="nav-btn" href="#">Login</a>
+    </nav>
+  </header>
+
+
+  <!-- =================== SCREEN 1 STYLE =================== -->
+  <section id="cards1" class="section section--lavender">
+    <h2 class="section-title">RESPONSIVE CARDS CSS</h2>
+
+    <div class="grid grid-3">
+      <article class="card1">
+        <div class="icon">
+          <!-- twitter icon (inline svg) -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 5.8c-.7.3-1.4.5-2.2.6.8-.5 1.3-1.2 1.6-2.1-.7.4-1.5.8-2.4.9A3.6 3.6 0 0 0 12.8 6c0 .3 0 .6.1.8A10.2 10.2 0 0 1 3 4.3a3.6 3.6 0 0 0 1.1 4.8c-.6 0-1.2-.2-1.7-.5v.1c0 1.7 1.2 3.2 2.9 3.6-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.6 2 2.8 3.7 2.8A7.3 7.3 0 0 1 2 18.4 10.2 10.2 0 0 0 7.5 20c6.6 0 10.2-5.5 10.2-10.2v-.5c.7-.5 1.3-1.2 1.8-2z"/>
+          </svg>
+        </div>
+
+        <h3>TWITTER</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a class="pill-btn" href="#">READ MORE</a>
+      </article>
+
+      <article class="card1">
+        <div class="icon">
+          <!-- instagram icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.8 6.6a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/>
+          </svg>
+        </div>
+
+        <h3>INSTAGRAM</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a class="pill-btn" href="#">READ MORE</a>
+      </article>
+
+      <article class="card1">
+        <div class="icon">
+          <!-- youtube icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.8 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.7.5A3 3 0 0 0 2.2 8.2 31.5 31.5 0 0 0 1.9 12a31.5 31.5 0 0 0 .3 3.8 3 3 0 0 0 2.1 2.1c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 22.1 12a31.5 31.5 0 0 0-.3-3.8zM10.2 14.7V9.3L15 12l-4.8 2.7z"/>
+          </svg>
+        </div>
+
+        <h3>YOUTUBE</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a class="pill-btn" href="#">READ MORE</a>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- =================== SCREEN 2 STYLE =================== -->
+  <section id="cards2" class="section section--light">
+    <h2 class="section-title">Blog Cards (Tags + Author)</h2>
+
+    <div class="grid grid-3">
+      <article class="card2">
+        <img src="https://picsum.photos/800/500?random=31" alt="car" />
+        <div class="card2-body">
+          <span class="tag tag--blue">TECHNOLOGY</span>
+          <h3>Why is the Tesla Cybertruck designed the way it is?</h3>
+          <p>An exploration into the truck's polarising design.</p>
+
+          <div class="author">
+            <div class="avatar"></div>
+            <div>
+              <div class="name">Carrie Brewer</div>
+              <div class="date">2h ago</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card2">
+        <img src="https://picsum.photos/800/500?random=32" alt="balloons" />
+        <div class="card2-body">
+          <span class="tag tag--purple">POPULAR</span>
+          <h3>How to Keep Going When You Don't Know What's Next</h3>
+          <p>The future can be scary, but there are ways to deal with that fear.</p>
+
+          <div class="author">
+            <div class="avatar"></div>
+            <div>
+              <div class="name">Jerome Walton</div>
+              <div class="date">Yesterday</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card2">
+        <img src="https://picsum.photos/800/500?random=33" alt="city" />
+        <div class="card2-body">
+          <span class="tag tag--green">DESIGN</span>
+          <h3>10 Rules of Dashboard Design</h3>
+          <p>Dashboard Design Guidelines</p>
+
+          <div class="author">
+            <div class="avatar"></div>
+            <div>
+              <div class="name">Lewis Daniels</div>
+              <div class="date">23 Dec 2019</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- =================== SCREEN 3 STYLE =================== -->
+  <section id="cards3" class="section section--white">
+    <h2 class="section-title section-title--blue">Blog And News</h2>
+
+    <div class="grid grid-3">
+      <article class="card3">
+        <img src="https://picsum.photos/800/500?random=41" alt="blog1" />
+        <div class="card3-body">
+          <h3>Blog Title 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <a class="btn-blue" href="#">Read More</a>
+        </div>
+      </article>
+
+      <article class="card3">
+        <img src="https://picsum.photos/800/500?random=42" alt="blog2" />
+        <div class="card3-body">
+          <h3>Blog Title 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <a class="btn-blue" href="#">Read More</a>
+        </div>
+      </article>
+
+      <article class="card3">
+        <img src="https://picsum.photos/800/500?random=43" alt="blog3" />
+        <div class="card3-body">
+          <h3>Blog Title 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <a class="btn-blue" href="#">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Cards</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background:#0a0f14;
+  color:#eaf2ff;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+}
+.container{
+  display:grid;
+  grid-template-columns: 360px 380px;
+  gap:40px;
+}
+
+/* ===== PROFILE CARD ===== */
+.profile{
+  background:#1b1e23;
+  border-radius:20px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+.avatar{
+  width:90px;height:90px;border-radius:50%;
+  margin:0 auto 16px;
+  background: radial-gradient(circle at 30% 30%, #666, #111);
+}
+.profile h2{margin:0;font-size:20px}
+.location{
+  color:#b7ff4a;
+  font-size:13px;
+  margin:6px 0 12px;
+}
+.profile p{
+  font-size:13px;
+  color:#bbb;
+}
+.links{
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+.links a{
+  padding:12px;
+  background:#2a2d31;
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+}
+
+/* ===== NFT CARD ===== */
+.nft-wrap{
+  background:linear-gradient(180deg,#071b2f,#061526);
+  border-radius:24px;
+  padding:26px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+.nft{
+  background:#0f2339;
+  border-radius:18px;
+  padding:16px;
+}
+.image{
+  height:200px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#1ac6ff,#2b6bff);
+  position:relative;
+  overflow:hidden;
+}
+.cube{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:80px;height:80px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(255,255,255,.4),rgba(255,255,255,.05));
+  transform:rotate(20deg);
+}
+
+/* ACTIVE STATE */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,255,247,.45);
+  display:grid;
+  place-items:center;
+  opacity:0;
+  transition:.25s;
+}
+.nft:hover .overlay{opacity:1}
+
+.eye{
+  width:46px;height:46px;
+}
+
+/* text */
+h3{
+  margin:14px 0 6px;
+  font-size:15px;
+}
+.desc{
+  font-size:13px;
+  color:#9bbbd9;
+}
+.meta{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  margin:12px 0;
+}
+.eth{color:#6fffe9;font-weight:700}
+.creator{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:12px;
+  font-size:12px;
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="avatar"></div>
+    <h2>Jessica Randall</h2>
+    <div class="location">London, United Kingdom</div>
+    <p>“Front-end developer and avid reader.”</p>
+    <div class="links">
+      <a href="#">GitHub</a>
+      <a href="#">Frontend Mentor</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+
+  <!-- NFT -->
+  <div class="nft-wrap">
+    <div class="nft">
+      <div class="image">
+        <div class="cube"></div>
+        <div class="overlay">
+          <svg class="eye" viewBox="0 0 64 64" fill="none">
+            <path d="M32 14C17 14 6.5 26 4 32c2.5 6 13 18 28 18s25.5-12 28-18c-2.5-6-13-18-28-18Z" fill="white"/>
+            <circle cx="32" cy="32" r="9" fill="#0b1d2d"/>
+          </svg>
+        </div>
+      </div>
+
+      <h3>Equilibrium #3429</h3>
+      <p class="desc">Our Equilibrium collection promotes balance and calm.</p>
+
+      <div class="meta">
+        <span class="eth">● 0.041 ETH</span>
+        <span>3 days left</span>
+      </div>
+
+      <div class="creator">Creation of <b>Jules Wyvern</b></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
