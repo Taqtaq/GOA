@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Counter</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 10px 14px; cursor: pointer; }
+    p { font-size: 24px; margin: 0 0 12px; }
+  </style>
+</head>
+<body>
+
+  <!-- პარაგრაფი, სადაც დროებით წერია 0 -->
+  <p id="count">0</p>
+
+  <!-- ღილაკი, რომელზე დაკლიკებისას გაიზრდება რიცხვი -->
+  <button id="btn">Increase</button>
+
+  <script>
+    // DOM-დან ვიღებთ ელემენტებს
+    const p = document.getElementById("count");
+    const btn = document.getElementById("btn");
+
+    // ცვლადი, სადაც ვინახავთ მიმდინარე რაოდენობას (იწყება 0-დან)
+    let counter = 0;
+
+    // addEventListener — "ვუსმენთ" click event-ს ღილაკზე
+    // როცა user დააკლიკებს, ეს ფუნქცია გაეშვება
+    btn.addEventListener("click", () => {
+      counter = counter + 1;      // +1
+      p.textContent = counter;    // პარაგრაფში ახალი რიცხვის ჩაწერა
+    });
+  </script>
+
+</body>
+</html>

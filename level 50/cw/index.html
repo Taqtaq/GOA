@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8" />
+  <title>Form</title>
+</head>
+<body>
+  <form id="userForm">
+    <input id="firstName" type="text" placeholder="სახელი" required />
+    <input id="lastName" type="text" placeholder="გვარი" required />
+    <button type="submit">გაგზავნა</button>
+  </form>
+
+  <p id="output"></p>
+
+  <script>
+    const form = document.getElementById("userForm");     // ვიღებთ ფორმას id-ით
+    const firstNameInput = document.getElementById("firstName"); // ვიღებთ სახელის input-ს
+    const lastNameInput = document.getElementById("lastName");   // ვიღებთ გვარის input-ს
+    const output = document.getElementById("output");     // სადაც შედეგს გამოვიტანთ
+
+    form.addEventListener("submit", function (e) {
+      // e არის event ობიექტი: ინფორმაცია ამ submit მოვლენაზე
+      e.preventDefault(); // აჩერებს ფორმის default ქცევას (გვერდის გადატვირთვას)
+
+      const first = firstNameInput.value.trim(); // input-ში შეყვანილი სახელი
+      const last = lastNameInput.value.trim();   // input-ში შეყვანილი გვარი
+
+      output.textContent = "თქვენი სახელი და გვარია: " + first + " " + last; // ეკრანზე გამოტანა
+
+      form.reset(); // ასუფთავებს input-ებს (არასავალდებულო)
+    });
+  </script>
+</body>
+</html>
