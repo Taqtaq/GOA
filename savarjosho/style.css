@@ -1,0 +1,30 @@
+.main-page {
+    min-height: 100vh;
+    background-color: hsl(185, 75%, 39%);
+    padding: 25px;
+    display: grid;
+    }
+.card {
+    width: 350px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 20px 40px;
+}
+
+.cards_top{
+    height: 130px;
+    background: url(savarjosho\profile-card-component-main\images\bg-pattern-card.svg);
+}
+
+.avatar  {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+.cards-body {
+    padding: 65px 25px 25px;
+}
+.title{
+    font-size: 18px;
+}

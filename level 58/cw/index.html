@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#box {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+#box2 {
+    width: 50px;
+    height: 50px;
+    background: blue;
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+</style>
+</head>
+<body>
+
+<div id="box"></div>
+<div id="box2"></div>
+
+<script>
+let box = document.getElementById("box");
+let box2 = document.getElementById("box2");
+
+let position = 0;
+let direction = 1;
+
+let interval = setInterval(() => {
+
+    position += direction * 5;
+    box.style.left = position + "px";
+    box2.style.right = position + "px"; 
+    if (position >= 500) {
+        direction = -1;
+    }
+
+    if (position <= 0) {
+        direction = 1;
+    }
+
+}, 20);
+</script>
+
+</body>
+</html>

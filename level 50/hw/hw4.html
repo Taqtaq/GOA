@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Div Color</title>
+  <style>
+    /* div-ის ზომა და სტილი */
+    #colorBox {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+      margin-top: 20px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- მომხმარებლის input ფერისთვის -->
+<input type="text" id="colorInput" placeholder="Enter a color (e.g. red, #ff0000)">
+<button id="setColorBtn">Set Color</button>
+
+<!-- div რომლის ფერსაც შეცვლით -->
+<div id="colorBox"></div>
+
+<script>
+  // ღილაკზე დაჭერისას
+  document.getElementById("setColorBtn").onclick = function() {
+
+    // ვიღებთ input-ის მნიშვნელობას
+    const color = document.getElementById("colorInput").value;
+
+    // ვამოწმებთ, რომ რაღაც შეყვანილია
+    if (color === "") return;
+
+    // div-ის background ფერის შეცვლა
+    document.getElementById("colorBox").style.backgroundColor = color;
+
+    // input-ის გასუფთავება
+    document.getElementById("colorInput").value = "";
+  }
+</script>
+
+</body>
+</html>

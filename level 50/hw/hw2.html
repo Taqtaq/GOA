@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Validation</title>
+</head>
+<body>
+
+<!-- მომხმარებლის input პაროლისთვის -->
+<input type="password" id="passwordInput" placeholder="Enter password">
+<button id="checkBtn">Check Password</button>
+
+<!-- შედეგის გამოსატანი ადგილი -->
+<p id="result"></p>
+
+<script>
+  // ღილაკზე დაჭერისას
+  document.getElementById("checkBtn").onclick = function() {
+
+    // input-დან პაროლის მნიშვნელობის ამოღება
+    const password = document.getElementById("passwordInput").value;
+
+    const resultText = document.getElementById("result");
+
+    // ვამოწმებთ მინიმუმ 7 სიმბოლოს
+    const hasMinLength = password.length >= 7;
+
+    // ვამოწმებთ punctuation სიმბოლოს არსებობას
+    const hasPunctuation = /[!@\$%\^]/.test(password);
+
+    // თუ ორივე პირობა შესრულებულია
+    if (hasMinLength && hasPunctuation) {
+      resultText.textContent = "Strong Password";
+    } else {
+      resultText.textContent = "Weak Password";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#box {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+</style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+let box = document.getElementById("box");
+
+let x = 0;
+let y = 0;
+
+let direction = "right";
+let speed = 5;
+
+let interval = setInterval(() => {
+
+    if (direction === "right") {
+        x += speed;
+        if (x >= 500) direction = "down";
+    }
+
+    else if (direction === "down") {
+        y += speed;
+        if (y >= 300) direction = "left";
+    }
+
+    else if (direction === "left") {
+        x -= speed;
+        if (x <= 0) direction = "up";
+    }
+
+    else if (direction === "up") {
+        y -= speed;
+        if (y <= 0) direction = "right";
+    }
+
+    box.style.left = x + "px";
+    box.style.top = y + "px";
+
+}, 20);
+</script>
+
+</body>
+</html>

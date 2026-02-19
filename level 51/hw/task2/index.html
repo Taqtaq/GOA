@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Account & Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Account & Profile</h1>
+
+    <!-- AUTH SECTION -->
+    <section class="card" id="authSection">
+      <div class="tabs">
+        <button class="tab active" id="tabRegister">Register</button>
+        <button class="tab" id="tabLogin">Login</button>
+      </div>
+
+      <!-- REGISTER -->
+      <form id="registerForm" class="form">
+        <div class="row">
+          <label>Name</label>
+          <input id="regName" required placeholder="e.g. Nika" />
+        </div>
+
+        <div class="row">
+          <label>Email</label>
+          <input id="regEmail" type="email" required placeholder="e.g. nika@mail.com" />
+        </div>
+
+        <div class="row">
+          <label>Password</label>
+          <input id="regPassword" type="password" required placeholder="Strong password required" />
+          <div class="pwLine">
+            <span class="pill" id="pwStatus">Strength: —</span>
+            <span class="hint" id="pwHint">Use 8+ chars, upper, lower, number, special.</span>
+          </div>
+        </div>
+
+        <button class="btn" type="submit">Create account</button>
+
+        <div class="note">
+          Account is created only if password is <b>STRONG</b>.
+        </div>
+      </form>
+
+      <!-- LOGIN -->
+      <form id="loginForm" class="form hidden">
+        <div class="row">
+          <label>Email</label>
+          <input id="loginEmail" type="email" required />
+        </div>
+
+        <div class="row">
+          <label>Password</label>
+          <input id="loginPassword" type="password" required />
+        </div>
+
+        <button class="btn" type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- ACCOUNTS LIST -->
+    <section class="card" id="accountsSection">
+      <div class="topbar">
+        <h2>Created accounts</h2>
+        <button class="btn secondary" id="clearAccountsBtn">Clear accounts</button>
+      </div>
+
+      <div class="hint">
+        (Stored in localStorage)
+      </div>
+
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Bio</th>
+            </tr>
+          </thead>
+          <tbody id="accountsTbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PROFILE SECTION -->
+    <section class="card hidden" id="profileSection">
+      <div class="topbar">
+        <div>
+          Logged in as: <b id="currentEmail"></b>
+        </div>
+        <button class="btn danger" id="logoutBtn">Logout</button>
+      </div>
+
+      <h2>Profile</h2>
+
+      <!-- UPDATE PROFILE FIELDS -->
+      <form id="profileForm" class="form grid">
+        <div class="row">
+          <label>Name</label>
+          <input id="profileName" required />
+        </div>
+
+        <div class="row">
+          <label>Email (read-only)</label>
+          <input id="profileEmail" disabled />
+        </div>
+
+        <div class="row">
+          <label>Phone</label>
+          <input id="profilePhone" placeholder="e.g. +995..." />
+        </div>
+
+        <div class="row">
+          <label>City</label>
+          <input id="profileCity" placeholder="e.g. Tbilisi" />
+        </div>
+
+        <div class="row full">
+          <label>Bio</label>
+          <textarea id="profileBio" rows="4" placeholder="Write something about you..."></textarea>
+        </div>
+
+        <div class="row actions full">
+          <button class="btn" type="submit">Save profile</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

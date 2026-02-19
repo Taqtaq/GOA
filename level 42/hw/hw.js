@@ -155,6 +155,7 @@ function myForEach(arr, cb, thisArg) {
   }
 }
 
+
 function myMap(arr, cb, thisArg) {
   const res = new Array(arr.length);
   for (let i = 0; i < arr.length; i++) {

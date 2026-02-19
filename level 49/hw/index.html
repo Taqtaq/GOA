@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Tasks</title>
+</head>
+<body>
+
+<!-- 5) ღილაკი Change bgColor -->
+<button id="changeColorBtn">Change bgColor</button>
+
+<!-- 6) ელემენტი ლისტში -->
+<ul id="taskList"></ul>
+<button id="addTaskBtn">Add Task</button>
+
+<!-- 7) guessTheNumber -->
+<input type="number" id="guessInput" placeholder="Guess the number">
+<button id="guessBtn">Guess</button>
+<p id="guessResult"></p>
+
+<!-- 8) 2 რიცხვის ოპერაცია -->
+<input type="number" id="num1" placeholder="Number 1">
+<input type="number" id="num2" placeholder="Number 2">
+<button id="calcBtn">Calculate</button>
+<p id="calcResult"></p>
+
+<script>
+  // 5) ღილაკი background ფერის შეცვლისთვის
+  document.getElementById('changeColorBtn').onclick = function() {
+    const r = Math.floor(Math.random() * 256); // 0-255
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+  }
+
+  // 6) მომხმარებლის მიერ შეტანილი task
+  document.getElementById('addTaskBtn').onclick = function() {
+    const task = prompt("შეიყვანეთ თქვენი task");
+    if (task) {
+      const li = document.createElement('li'); // ელემენტი
+      li.textContent = task;
+      document.getElementById('taskList').appendChild(li);
+    }
+  }
+
+  // 7) guessTheNumber
+  const secretNumber = Math.floor(Math.random() * 100) + 1; // 1-100
+  document.getElementById('guessBtn').onclick = function() {
+    const userGuess = Number(document.getElementById('guessInput').value);
+    const result = document.getElementById('guessResult');
+    if (userGuess > secretNumber) {
+      result.textContent = "The number is too high";
+    } else if (userGuess < secretNumber) {
+      result.textContent = "The number is too low";
+    } else {
+      result.textContent = "Congratulations! You have guessed the secret number!";
+    }
+  }
+
+  // 8) ორი რიცხვის ოპერაციები
+  document.getElementById('calcBtn').onclick = function() {
+    const n1 = Number(document.getElementById('num1').value);
+    const n2 = Number(document.getElementById('num2').value);
+    const res = document.getElementById('calcResult');
+
+    const sum = n1 + n2;
+    const diff = n1 - n2;
+    const prod = n1 * n2;
+    const div = n2 !== 0 ? (n1 / n2) : "Cannot divide by zero";
+
+    res.innerHTML = `
+      Sum: ${sum} <br>
+      Difference: ${diff} <br>
+      Product: ${prod} <br>
+      Division: ${div}
+    `;
+  }
+
+</script>
+
+</body>
+</html>

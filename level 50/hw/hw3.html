@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favorite Movies</title>
+</head>
+<body>
+
+<h3>My Favorite Movies</h3>
+<ul id="movieList"></ul>
+
+<script>
+  const movies = ["Inception", "Interstellar", "The Matrix", "Avatar"];
+
+  movies.map(function(movie){
+      const li = document.createElement("li");
+
+      li.textContent = movie;
+
+      document.getElementById("movieList").appendChild(li);
+  });
+</script>
+
+</body>
+</html>

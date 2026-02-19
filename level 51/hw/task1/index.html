@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Students</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Students</h1>
+
+    <!-- AUTH SECTION -->
+    <section class="card" id="authSection">
+      <div class="tabs">
+        <button class="tab active" id="tabLogin">Login</button>
+        <button class="tab" id="tabRegister">Register</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="form">
+        <div class="row">
+          <label>Username</label>
+          <input id="loginUsername" required />
+        </div>
+        <div class="row">
+          <label>Password</label>
+          <input id="loginPassword" type="password" required />
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p class="hint">
+          Test admin account: <b>admin</b> / <b>admin</b> (admin role)
+        </p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="registerForm" class="form hidden">
+        <div class="row">
+          <label>Username</label>
+          <input id="regUsername" required />
+        </div>
+        <div class="row">
+          <label>Password</label>
+          <input id="regPassword" type="password" required />
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <p class="hint">
+          Default role is <b>user</b>.
+        </p>
+      </form>
+    </section>
+
+    <!-- MAIN APPLICATION -->
+    <section class="card hidden" id="appSection">
+      <div class="topbar">
+        <div>
+          Logged in as: <b id="who"></b> (<span id="role"></span>)
+        </div>
+        <button class="btn danger" id="logoutBtn">Logout</button>
+      </div>
+
+      <!-- STUDENT FORM -->
+      <h2 id="formTitle">Add student</h2>
+      <form id="studentForm" class="form grid">
+        <input type="hidden" id="editingId" />
+
+        <div class="row">
+          <label>First name</label>
+          <input id="firstName" required />
+        </div>
+
+        <div class="row">
+          <label>Last name</label>
+          <input id="lastName" required />
+        </div>
+
+        <div class="row">
+          <label>Age</label>
+          <input id="age" type="number" min="1" required />
+        </div>
+
+        <div class="row">
+          <label>Grade</label>
+          <input id="grade" type="number" min="0" max="100" required />
+        </div>
+
+        <div class="row">
+          <label>Subject</label>
+          <input id="subject" required placeholder="e.g. Math" />
+        </div>
+
+        <div class="row actions">
+          <button type="submit" class="btn" id="submitBtn">Submit</button>
+          <button
+            type="button"
+            class="btn secondary hidden"
+            id="cancelEditBtn"
+          >
+            Cancel edit
+          </button>
+        </div>
+      </form>
+
+      <!-- FILTERS AND SORTING -->
+      <div class="controls">
+        <div class="row">
+          <label>Filter by subject</label>
+          <select id="subjectFilter">
+            <option value="">All</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label>Sort by grade</label>
+          <select id="gradeSort">
+            <option value="">None</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+
+        <button class="btn secondary" id="clearAllBtn">
+          Clear students
+        </button>
+      </div>
+
+      <!-- STUDENTS TABLE -->
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Grade</th>
+              <th>Subject</th>
+              <th>Actions (admin)</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTbody"></tbody>
+        </table>
+      </div>
+
+      <p class="hint">
+        Edit and delete actions are available <b>only for admin</b>.
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

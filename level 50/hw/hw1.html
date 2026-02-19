@@ -1,0 +1,55 @@
+<!-- 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 50 HW</title>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button id="addBtn">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        document.getElementById("addBtn").onclick = function(){
+            const taskValue = document.getElementById("taskInput").value;
+            if (taskValue === "") return;
+
+            const li = document.createElement("li");
+            
+            const span = document.createElement("span");
+            span.textContent = taskValue;
+
+            const editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+
+            deleteBtn.onclick = function(){
+                li.remove();
+            }
+            
+            editBtn.onclick = function(){
+                const newTask = prompt("Update task: ", span.textContent);
+                if (newTask !== null && newTask !== ""){
+                    span.textContent = newTask;
+                }
+
+            }
+
+            li.appendChild(span);
+            li.appendChild(editBtn);
+            li.appendChild(deleteBtn);
+
+
+            
+
+            document.getElementById("taskList").appendChild(li);
+            document.getElementById("taskInput").value = "";
+        
+        }
+    </script>
+</body>
+</html>

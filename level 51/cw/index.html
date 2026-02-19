@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Registration</title>
+</head>
+<body>
+
+<h3>Registration Form</h3>
+<form id="registerForm">
+  <input type="email" id="emailInput" placeholder="Email" required><br>
+  <input type="text" id="nameInput" placeholder="Name" required><br>
+  <input type="password" id="passInput" placeholder="Password" required><br>
+  <button type="submit">Register</button>
+</form>
+
+<h4>Accounts</h4>
+<ul id="accountList"></ul>
+
+<script>
+
+  // მასივი სადაც ვინახავთ ყველა შექმნილ აქაუნთს
+  const accounts = [];
+
+  // Account კლასი — წარმოადგენს ერთ მომხმარებელს
+  class Account {
+    constructor(email, name, password){
+      // ვინახავთ მომხმარებლის მონაცემებს ობიექტში
+      this.email = email;
+      this.name = name;
+      this.password = password;
+    }
+
+    // მეთოდი რომელიც აბრუნებს სახელს და იმეილს (პაროლის გარეშე)
+    display(){
+      return `${this.name} - ${this.email}`;
+    }
+  }
+
+  // კლასი მნიშვნელობების შესამოწმებლად
+  class ValueChecker {
+
+    // სტატიკური მეთოდი ამოწმებს იმეილის ფორმატის სისწორეს
+    static isEmailValid(email){
+      // რეგულარული გამოსახულება ამოწმებს არის თუ არა იმეილი სწორი ფორმატის
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // სტატიკური მეთოდი ამოწმებს პაროლის სიძლიერეს
+    static isPassValid(pass){
+      // პაროლი უნდა იყოს მინიმუმ 6 სიმბოლო,
+      // უნდა შეიცავდეს ციფრს და სპეციალურ სიმბოლოს
+      return /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/.test(pass);
+    }
+  }
+
+  // submit მოვლენის დამუშავება
+  document.getElementById("registerForm").addEventListener("submit", function(e){
+
+    // ვთიშავთ გვერდის ავტომატურ რეფრეშს
+    e.preventDefault();
+
+    // ვიღებთ მნიშვნელობებს input ველებიდან
+    const email = document.getElementById("emailInput").value;
+    const name = document.getElementById("nameInput").value;
+    const password = document.getElementById("passInput").value;
+
+    // ვამოწმებთ იმეილის ვალიდურობას
+    if(!ValueChecker.isEmailValid(email)){
+      alert("იმეილის ფორმატი არასწორია!");
+      return;
+    }
+
+    // ვამოწმებთ პაროლის სიძლიერეს
+    if(!ValueChecker.isPassValid(password)){
+      alert("პაროლი უნდა იყოს მინიმუმ 6 სიმბოლო და შეიცავდეს ციფრს და სპეციალურ სიმბოლოს!");
+      return;
+    }
+
+    // ვამოწმებთ არსებობს თუ არა უკვე ასეთი იმეილი მასივში
+    if(accounts.some(acc => acc.email === email)){
+      alert("ასეთი აქაუნთი უკვე არსებობს!");
+      return;
+    }
+
+    // ვქმნით ახალ Account ობიექტს
+    const newAcc = new Account(email, name, password);
+
+    // ვამატებთ მას მასივში
+    accounts.push(newAcc);
+
+    // ვასუფთავებთ სიას თავიდან გამოსატანად
+    const accountList = document.getElementById("accountList");
+    accountList.innerHTML = "";
+
+    // თითოეულ აქაუნთს ვაბეჭდავთ ეკრანზე პაროლის გარეშე
+    accounts.forEach(acc => {
+      const li = document.createElement("li");
+      li.textContent = acc.display();
+      accountList.appendChild(li);
+    });
+
+    // ვასუფთავებთ input ველებს
+    document.getElementById("emailInput").value = "";
+    document.getElementById("nameInput").value = "";
+    document.getElementById("passInput").value = "";
+  });
+
+</script>
+
+</body>
+</html>

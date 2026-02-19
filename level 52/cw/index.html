@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Manager</title>
+</head>
+<body>
+
+<h2>Add Car</h2>
+
+<form id="carForm">
+  <input type="text" name="brand" placeholder="Brand" required><br>
+  <input type="text" name="model" placeholder="Model" required><br>
+  <input type="number" name="year" placeholder="Year" required><br>
+  <input type="number" name="price" placeholder="Price" required><br>
+  <input type="url" name="image" placeholder="Image URL" required><br>
+  <button type="submit">Add Car</button>
+</form>
+
+<h3>Cars</h3>
+<div id="carsContainer"></div>
+
+<script>
+
+  // მანქანის კლასი
+  class Car {
+    constructor(brand, model, year, price, image){
+      this.brand = brand;
+      this.model = model;
+      this.year = year;
+      this.price = price;
+      this.image = image;
+    }
+  }
+
+  // მანქანების მენეჯერი
+  class CarManager {
+
+    constructor(){
+      // ცარიელი მასივის ინიციალიზაცია
+      this.cars = [];
+
+      // private კონტეინერის შენახვა სადაც დავარენდერებთ მანქანებს
+      this._carsContainer = document.getElementById("carsContainer");
+    }
+
+    // მანქანის დამატების მეთოდი
+    addCar(brand, model, year, price, image){
+      const newCar = new Car(brand, model, year, price, image);
+      this.cars.push(newCar);
+
+      // დამატების შემდეგ ვრენდერავთ მანქანებს
+      renderCars(this._carsContainer, this.cars);
+    }
+
+    // ინდექსის მიხედვით წაშლა
+    deleteCar(index){
+      this.cars.splice(index, 1);
+
+      // წაშლის შემდეგ თავიდან ვრენდერავთ
+      renderCars(this._carsContainer, this.cars);
+    }
+  }
+
+  // მანქანების რენდერის ფუნქცია
+  function renderCars(container, cars){
+
+    // თავიდან ვასუფთავებთ კონტეინერს
+    container.innerHTML = "";
+
+    cars.forEach((car, index) => {
+
+      // თითოეული მანქანის HTML სტრუქტურის შექმნა
+      container.innerHTML += `
+        <div style="border:1px solid black; padding:10px; margin:10px;">
+          <img src="${car.image}" width="200"><br>
+          <strong>${car.brand} ${car.model}</strong><br>
+          Year: ${car.year}<br>
+          Price: $${car.price}<br>
+          <button onclick="manager.deleteCar(${index})">Delete</button>
+        </div>
+      `;
+    });
+  }
+
+  // CarManager ობიექტის შექმნა
+  const manager = new CarManager();
+
+  // ფორმის submit მოვლენის დამუშავება
+  document.getElementById("carForm").addEventListener("submit", function(e){
+
+    // გვერდის რეფრეშის გათიშვა
+    e.preventDefault();
+
+    // input მნიშვნელობების ამოღება name ატრიბუტების დახმარებით
+    const formData = new FormData(this);
+
+    const brand = formData.get("brand");
+    const model = formData.get("model");
+    const year = formData.get("year");
+    const price = formData.get("price");
+    const image = formData.get("image");
+
+    // მანქანის დამატება manager-ის მეშვეობით
+    manager.addCar(brand, model, year, price, image);
+
+    // ფორმის გასუფთავება
+    this.reset();
+  });
+
+</script>
+
+</body>
+</html>
