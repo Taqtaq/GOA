@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Main container -->
+  <main class="container">
+
+    <!-- App header -->
+    <header class="header">
+      <h1>Notes App</h1>
+      <p class="subtitle">
+        Create, edit, delete and search notes by unique title
+      </p>
+    </header>
+
+    <!-- Search panel -->
+    <section class="panel">
+      <div class="row">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search by title..."
+        />
+        <button
+          id="clearSearchBtn"
+          class="btn secondary"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </section>
+
+    <!-- Note form -->
+    <section class="panel">
+      <h2 id="formTitle">Create note</h2>
+
+      <form id="noteForm" autocomplete="off">
+
+        <!-- Title input -->
+        <label class="label">
+          Title (must be unique)
+          <input
+            id="titleInput"
+            type="text"
+            placeholder="Example: My plans"
+          />
+        </label>
+
+        <!-- Text input -->
+        <label class="label">
+          Text
+          <textarea
+            id="textInput"
+            rows="5"
+            placeholder="Write your note here..."
+          ></textarea>
+        </label>
+
+        <!-- Form buttons -->
+        <div class="row">
+          <button
+            id="saveBtn"
+            class="btn primary"
+            type="submit"
+          >
+            Add
+          </button>
+
+          <button
+            id="cancelEditBtn"
+            class="btn secondary"
+            type="button"
+            hidden
+          >
+            Cancel
+          </button>
+        </div>
+
+        <!-- Status message -->
+        <p id="message" class="message"></p>
+      </form>
+    </section>
+
+    <!-- Notes list -->
+    <section class="panel">
+      <div class="row space">
+        <h2>Notes list</h2>
+        <span id="countBadge" class="badge">0</span>
+      </div>
+
+      <div id="notesList" class="notes"></div>
+
+      <p id="emptyState" class="empty">
+        No notes yet. Create your first one.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <small>Notes are saved in localStorage</small>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

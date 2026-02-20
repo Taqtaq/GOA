@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Music</h1>
+      <p class="subtitle">Add, update, delete music items (title + artist)</p>
+    </header>
+
+    <section class="panel">
+      <h2 id="formTitle">Add music</h2>
+
+      <form id="musicForm" autocomplete="off">
+        <label class="label">
+          Title
+          <input id="titleInput" type="text" placeholder="Example: Blinding Lights" />
+        </label>
+
+        <label class="label">
+          Artist
+          <input id="artistInput" type="text" placeholder="Example: The Weeknd" />
+        </label>
+
+        <div class="row">
+          <button id="saveBtn" class="btn primary" type="submit">Add</button>
+          <button id="cancelBtn" class="btn secondary" type="button" hidden>Cancel</button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="row space">
+        <h2>Playlist</h2>
+        <span id="countBadge" class="badge">0</span>
+      </div>
+
+      <div id="musicList" class="list"></div>
+      <p id="emptyState" class="empty">No items yet. Add your first track.</p>
+    </section>
+
+    <footer class="footer">
+      <small>Saved in localStorage</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
