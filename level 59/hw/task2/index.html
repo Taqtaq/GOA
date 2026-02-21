@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Carousel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Image Carousel</h1>
+
+    <button id="addBtn" class="primary">Add</button>
+
+    <section class="carousel">
+      <button id="prevBtn" class="nav" type="button" aria-label="Previous">‹</button>
+
+      <div class="stage">
+        <img id="carouselImg" alt="carousel image" />
+        <div id="emptyState" class="empty">No images yet</div>
+      </div>
+
+      <button id="nextBtn" class="nav" type="button" aria-label="Next">›</button>
+    </section>
+
+    <div class="meta">
+      <span id="counter">0 / 5</span>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
