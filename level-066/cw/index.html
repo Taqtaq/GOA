@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Async/Await + Try/Catch + Promise.all</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #status { color: #777; margin-bottom: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+    .card img { width: 100%; height: 160px; object-fit: contain; }
+    .title { font-weight: bold; margin: 8px 0; font-size: 14px; }
+    .price { font-weight: bold; margin-top: 8px; }
+    pre { background:#f6f6f6; padding: 12px; border-radius: 8px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h2>FakeStore Products (async/await)</h2>
+  <div id="status">Loading...</div>
+  <div id="products" class="grid"></div>
+
+  <h3>Promise.all result</h3>
+  <pre id="allResult">Waiting...</pre>
+
+  <script>
+    const API_URL = 'https://fakestoreapi.com/products';
+    const productsEl = document.getElementById('products');
+    const statusEl = document.getElementById('status');
+    const allResultEl = document.getElementById('allResult');
+
+    // 1) async/await explanation (as comments)
+    /*
+      async/await keywords are used to write asynchronous code in a cleaner way.
+      Instead of chaining .then() and .catch(), we can "wait" for a Promise result.
+
+      Pros:
+      - Code looks like synchronous (easier to read)
+      - Easier error handling with try/catch
+      - Easier to debug and maintain (less nested callbacks / chains)
+    */
+
+    // 3) try/catch explanation (as comments)
+    /*
+      try/catch გამოიყენება შეცდომების (errors) დასაჭერად.
+      try ბლოკში ვწერთ კოდს, რომელიც შეიძლება "გაფუჭდეს".
+      catch ბლოკში ვიღებთ error-ს და ვმართავთ (მაგ: შეტყობინება, fallback, log).
+      ეს კარგია, რადგან აპი არ "სკდება" და მომხმარებელსაც ვაჩვენებთ სწორ მესიჯს.
+    */
+
+    // 2) fetch with async/await + JSON to JS object + render on site
+    async function fetchAndRenderProducts() {
+      try {
+        statusEl.textContent = 'Loading...';
+
+        // await waits until fetch Promise is resolved
+        const res = await fetch(API_URL);
+
+        // If server returns bad status, throw error manually
+        if (!res.ok) {
+          throw new Error('Request failed: ' + res.status);
+        }
+
+        // res.json() returns a Promise, await converts JSON -> JS objects/array
+        const data = await res.json(); // data is normal JS array of objects now
+
+        renderProducts(data);
+        statusEl.textContent = '';
+      } catch (error) {
+        console.log(error);
+        statusEl.textContent = 'Failed to load products. Check console.';
+      }
+    }
+
+    function renderProducts(list) {
+      productsEl.innerHTML = '';
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+          <img src="${p.image}" alt="${escapeHtml(p.title)}">
+          <div class="title">${escapeHtml(p.title)}</div>
+          <div>${escapeHtml(shortText(p.description, 120))}</div>
+          <div class="price">$${p.price}</div>
+        `;
+
+        productsEl.appendChild(card);
+      });
+    }
+
+    // 4) Create 3 Promises + Promise.all
+    function promiseAllDemo() {
+      const p1 = new Promise((resolve) => {
+        setTimeout(() => resolve('P1 success message'), 800);
+      });
+
+      const p2 = new Promise((resolve) => {
+        setTimeout(() => resolve('P2 success message'), 500);
+      });
+
+      const p3 = new Promise((resolve) => {
+        setTimeout(() => resolve('P3 success message'), 1000);
+      });
+
+      /*
+        Promise.all takes an array of Promises and returns ONE Promise.
+        - It resolves when ALL promises resolve.
+        - The result is an array of each promise result (in the same order).
+        - If ANY promise rejects, Promise.all rejects immediately.
+      */
+      Promise.all([p1, p2, p3])
+        .then(results => {
+          allResultEl.textContent = JSON.stringify(results, null, 2);
+        })
+        .catch(err => {
+          allResultEl.textContent = 'Promise.all error: ' + err;
+        });
+    }
+
+    // small helpers
+    function shortText(str, max) {
+      return str.length > max ? str.slice(0, max) + '...' : str;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    // run tasks
+    fetchAndRenderProducts();
+    promiseAllDemo();
+  </script>
+</body>
+</html>

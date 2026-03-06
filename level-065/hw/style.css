@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.price {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+}
+
+.btn-add {
+  background: #1f7ae0;
+  color: white;
+}
+
+.btn-remove {
+  background: #e03a3a;
+  color: white;
+}
+
+.cart {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  position: sticky;
+  top: 10px;
+  height: fit-content;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.muted {
+  color: #777;
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty {
+  font-weight: bold;
+}

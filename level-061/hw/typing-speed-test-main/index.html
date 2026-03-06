@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel" aria-label="Typing speed test">
+      <header class="top">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">⌨️</div>
+          <div>
+            <div class="title">Typing Speed Test</div>
+            <div class="sub">Type as fast as you can in 60 seconds</div>
+          </div>
+        </div>
+
+        <div class="best">
+          <span class="trophy" aria-hidden="true">🏆</span>
+          <span>Personal best:</span>
+          <strong id="bestWpm">0 WPM</strong>
+        </div>
+      </header>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="label">WPM</div>
+          <div class="value" id="wpm">0</div>
+        </div>
+        <div class="sep"></div>
+        <div class="stat">
+          <div class="label">Accuracy</div>
+          <div class="value red" id="accuracy">100%</div>
+        </div>
+        <div class="sep"></div>
+        <div class="stat">
+          <div class="label">Time</div>
+          <div class="value yellow" id="time">0:60</div>
+        </div>
+
+        <div class="controls">
+          <div class="pill">
+            <span>Difficulty:</span>
+            <button class="chip chip-active" type="button">Hard</button>
+          </div>
+          <div class="pill">
+            <span>Mode:</span>
+            <button class="chip chip-active" type="button">Timed (60s)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- START -->
+      <section id="startState" class="state">
+        <div class="blurText" aria-hidden="true">
+          Click start and begin typing. Your text will appear here.
+        </div>
+
+        <button class="btn primary" id="startBtn" type="button">Start Typing Test</button>
+        <div class="hint">Or click the text and start typing</div>
+      </section>
+
+      <!-- TEST -->
+      <section id="testState" class="state hidden">
+        <div class="textBox" id="textBox" tabindex="0" aria-label="Text to type">
+          <!-- spans injected -->
+        </div>
+
+        <input id="hiddenInput" class="hiddenInput" autocomplete="off" autocapitalize="off"
+               spellcheck="false" aria-label="Typing input" />
+
+        <div class="bottom">
+          <button class="btn" id="restartBtn" type="button">Restart Test ↻</button>
+        </div>
+      </section>
+
+      <!-- RESULT -->
+      <section id="resultState" class="state hidden">
+        <div class="resultIcon" aria-hidden="true">✅</div>
+        <h2 class="resultTitle">Test Complete!</h2>
+        <p class="resultSub">Solid run. Keep pushing to beat your high score.</p>
+
+        <div class="resultGrid">
+          <div class="resultCard">
+            <div class="label">WPM:</div>
+            <div class="value" id="finalWpm">0</div>
+          </div>
+          <div class="resultCard">
+            <div class="label">Accuracy:</div>
+            <div class="value red" id="finalAcc">0%</div>
+          </div>
+          <div class="resultCard">
+            <div class="label">Characters</div>
+            <div class="value" id="finalChars">0/0</div>
+          </div>
+        </div>
+
+        <button class="btn ghost" id="goAgainBtn" type="button">Go Again ↻</button>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

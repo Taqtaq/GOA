@@ -1,0 +1,210 @@
+:root{
+  --bg:#0b0f14;
+  --card:#121a23;
+  --card2:#0f1720;
+  --text:#e9f0f7;
+  --muted:#9bb0c4;
+  --pill:#1b2531;
+  --pill2:#273445;
+  --accent:#ff7a18;
+  --white:#ffffff;
+  --shadow: 0 18px 50px rgba(0,0,0,.55);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1000px 500px at 50% -200px, rgba(255,122,24,.18), transparent 55%),
+              radial-gradient(800px 400px at 100% 0%, rgba(110,170,255,.10), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  min-height:100vh;
+  display:flex;
+}
+
+.page{
+  width:100%;
+  display:grid;
+  place-items:center;
+  padding:28px 14px;
+}
+
+.card{
+  width:min(420px, 92vw);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), transparent 35%), var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow);
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background: rgba(255,122,24,.10);
+  color: var(--accent);
+  margin-bottom: 14px;
+  font-size:18px;
+}
+
+h1,h2{
+  margin: 10px 0 8px;
+  letter-spacing: .2px;
+}
+
+p{
+  margin: 0 0 16px;
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+
+.muted{
+  color: var(--muted);
+}
+
+.center{ text-align:center; }
+
+.rating{
+  display:flex;
+  gap: 12px;
+  margin: 16px 0 18px;
+}
+
+.rate-btn{
+  flex:1;
+  height:44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.06);
+  background: var(--pill);
+  color: #cfe0f1;
+  cursor:pointer;
+  transition: transform .08s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  font-weight: 600;
+}
+
+.rate-btn:hover{
+  background: var(--pill2);
+  transform: translateY(-1px);
+}
+
+.rate-btn:focus-visible{
+  outline: 2px solid rgba(255,122,24,.6);
+  outline-offset: 2px;
+}
+
+.rate-btn.active{
+  background: rgba(255,122,24,.18);
+  border-color: rgba(255,122,24,.35);
+  color: var(--accent);
+}
+
+.submit{
+  width:100%;
+  height:44px;
+  border:0;
+  border-radius: 999px;
+  background: var(--accent);
+  color:#1a0f07;
+  font-weight: 800;
+  letter-spacing: .12em;
+  cursor:pointer;
+  transition: filter .15s ease, transform .08s ease;
+}
+
+.submit:hover{ filter: brightness(1.04); }
+.submit:active{ transform: translateY(1px); }
+
+.submit:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  filter: grayscale(.2);
+}
+
+.hint{
+  margin-top:10px;
+  min-height: 18px;
+  color: rgba(255,255,255,.65);
+  font-size: 12.5px;
+}
+
+.hidden{ display:none; }
+
+.thankyou{
+  text-align:center;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), transparent 35%), var(--card2);
+}
+
+.selected{
+  display:inline-block;
+  margin: 14px auto 8px;
+  padding: 8px 12px;
+  background: rgba(255,122,24,.12);
+  color: rgba(255,160,90,1);
+  border: 1px solid rgba(255,122,24,.22);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.thanks-illus{
+  height: 98px;
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+
+.phone{
+  width:64px;
+  height:84px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  position:relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.phone::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:10px;
+  transform:translateX(-50%);
+  width:22px;
+  height:6px;
+  border-radius:999px;
+  background: rgba(255,255,255,.10);
+}
+
+.phone::after{
+  content:"";
+  position:absolute;
+  left:10px;
+  right:10px;
+  top:24px;
+  bottom:12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.04);
+}
+
+.dot{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background: var(--accent);
+  position:absolute;
+  right: 34%;
+  top: 18px;
+  box-shadow: 0 0 0 10px rgba(255,122,24,.10);
+}
+
+.submit.ghost{
+  margin-top: 12px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.12);
+  letter-spacing: .10em;
+}

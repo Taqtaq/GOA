@@ -1,0 +1,31 @@
+.<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FakeStore Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>FakeStore Products</h2>
+
+  <div class="layout">
+    <div>
+      <div id="status" class="muted">Loading...</div>
+      <div id="products" class="grid"></div>
+    </div>
+
+    <aside class="cart">
+      <h3>Cart</h3>
+      <div id="cartItems"></div>
+      <hr />
+      <div class="row">
+        <span>Total:</span>
+        <strong id="total">$0</strong>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

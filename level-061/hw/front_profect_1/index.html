@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Rating</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" id="ratingCard" aria-label="Оценка поддержки">
+      <div class="icon" aria-hidden="true">★</div>
+
+      <h1>How did we do?</h1>
+      <p class="muted">
+        Please let us know how we did with your support request.
+        All feedback is appreciated to help us improve our offering!
+      </p>
+
+      <div class="rating" role="radiogroup" aria-label="Rating from 1 to 5">
+        <button class="rate-btn" type="button" data-value="1" aria-label="Rate 1">1</button>
+        <button class="rate-btn" type="button" data-value="2" aria-label="Rate 2">2</button>
+        <button class="rate-btn" type="button" data-value="3" aria-label="Rate 3">3</button>
+        <button class="rate-btn" type="button" data-value="4" aria-label="Rate 4">4</button>
+        <button class="rate-btn" type="button" data-value="5" aria-label="Rate 5">5</button>
+      </div>
+
+      <button class="submit" id="submitBtn" type="button" disabled>SUBMIT</button>
+      <p class="hint" id="hint" aria-live="polite"></p>
+    </section>
+
+    <section class="card thankyou hidden" id="thankCard" aria-label="Спасибо за оценку">
+      <div class="thanks-illus" aria-hidden="true">
+        <div class="phone"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="selected" id="selectedText">You selected 0 out of 5</div>
+
+      <h2>Thank you!</h2>
+      <p class="muted center">
+        We appreciate you taking the time to give a rating.
+        If you ever need more support, don’t hesitate to get in touch!
+      </p>
+
+      <button class="submit ghost" id="rateAgain" type="button">RATE AGAIN</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

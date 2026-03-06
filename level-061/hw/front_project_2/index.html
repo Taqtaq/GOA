@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <!-- FORM -->
+    <section class="card" id="formCard" aria-label="Contact us form">
+      <h1>Contact Us</h1>
+
+      <form id="contactForm" novalidate>
+        <div class="grid2">
+          <div class="field">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" />
+            <p class="error" data-error-for="firstName"></p>
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last Name <span class="req">*</span></label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" />
+            <p class="error" data-error-for="lastName"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" />
+          <p class="error" data-error-for="email"></p>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>Query Type <span class="req">*</span></legend>
+
+          <div class="radio-grid">
+            <label class="radio">
+              <input type="radio" name="queryType" value="general" />
+              <span class="dot" aria-hidden="true"></span>
+              <span>General Enquiry</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="queryType" value="support" />
+              <span class="dot" aria-hidden="true"></span>
+              <span>Support Request</span>
+            </label>
+          </div>
+
+          <p class="error" data-error-for="queryType"></p>
+        </fieldset>
+
+        <div class="field">
+          <label for="message">Message <span class="req">*</span></label>
+          <textarea id="message" name="message" rows="6"></textarea>
+          <p class="error" data-error-for="message"></p>
+        </div>
+
+        <div class="consent">
+          <label class="check">
+            <input id="consent" name="consent" type="checkbox" />
+            <span class="box" aria-hidden="true"></span>
+            <span>I consent to being contacted by the team <span class="req">*</span></span>
+          </label>
+          <p class="error" data-error-for="consent"></p>
+        </div>
+
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- SUCCESS STATE -->
+    <section class="card success hidden" id="successCard" aria-label="Submitted state">
+      <div class="badge" aria-hidden="true">✓</div>
+      <h2>Message sent!</h2>
+      <p class="muted center">
+        Thanks for completing the form. We’ll be in touch soon.
+      </p>
+      <button class="btn ghost" id="sendAnother" type="button">Send another</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

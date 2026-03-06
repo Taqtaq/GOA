@@ -1,0 +1,19 @@
+// package.json
+// This file contains information about the project.
+// It stores the project name, version, scripts and dependencies.
+// When we install a package using npm install, it is saved here.
+// It helps Node.js understand what libraries the project needs.
+
+
+// package-lock.json
+// This file is automatically created by npm.
+// It stores the exact versions of installed packages.
+// This ensures that the project installs the same versions
+// of dependencies on every computer.
+
+
+// node_modules
+// This folder contains all installed npm packages.
+// When we run "npm install", npm downloads libraries
+// and stores them inside this folder.
+// Our project uses packages from this directory.

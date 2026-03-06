@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+</head>
+<body>
+
+<div id="products"></div>
+
+<script>
+  // send request to API
+  fetch('https://fakestoreapi.com/products')
+    .then(response => response.json()) // convert response to JSON
+    .then(data => {
+      renderProducts(data); // pass products array to function
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
+
+  function renderProducts(products) {
+    const container = document.getElementById('products');
+
+    products.forEach(product => {
+      const div = document.createElement('div');
+
+      div.innerHTML = `
+        <img src="${product.image}" width="150">
+        <h3>${product.title}</h3>
+        <p>${product.description}</p>
+        <strong>Price: $${product.price}</strong>
+        <hr>
+      `;
+
+      container.appendChild(div);
+    });
+  }
+</script>
+
+</body>
+</html>
